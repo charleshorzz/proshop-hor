@@ -53,24 +53,22 @@ const ProductEditScreen = () => {
 
     const submitHandler = async(e) => {
         e.preventDefault();
-        const updatedProduct = {
-            productId,
-            name,
-            price, 
-            image,
-            brand,
-            category,
-            countInStock,
-            description,
-        };
-
-    const result = await updateProduct(updatedProduct);
-        if (result.error) {
-            toast.error(result.error)
-        } else {
-            toast.success('Product Updated')
-            navigate("/admin/productlist")
-        }
+        try {
+            await updateProduct({
+              productId,
+              name,
+              price,
+              image,
+              brand,
+              category,
+              description,
+              countInStock,
+            }).unwrap(); // NOTE: here we need to unwrap the Promise to catch any rejection in our catch block
+            toast.success('Product updated');
+            navigate('/admin/productlist');
+          } catch (err) {
+            toast.error(err?.data?.message || err.error);
+          }
     }
 
     return (
@@ -113,7 +111,7 @@ const ProductEditScreen = () => {
                             type='text'
                             placeholder='Enter Image URL'
                             value={image}
-                            onChange={(e) => setImage}>
+                            onChange={(e) => setImage(e.target.value)}>
                             </FormControl>
                             <FormControl type='file' label="Choose file" onChange={ uploadFileHandler}>
                             </FormControl>

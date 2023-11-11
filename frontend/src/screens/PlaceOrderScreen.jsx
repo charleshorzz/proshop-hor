@@ -81,7 +81,7 @@ const PlaceOrderScreen = () => {
                                                     <Link to={`/product/${item._id}`}>{item.name}</Link>
                                                 </Col>
                                                 <Col md={4}>
-                                                    {item.qty} x ${item.price } = ${item.qty * item.price}
+                                                    {item.qty} x RM{item.price } = RM{item.qty * item.price}
                                                 </Col>
                                             </Row>
                                         </ListGroupItem>
@@ -101,28 +101,28 @@ const PlaceOrderScreen = () => {
                             <ListGroupItem>
                                 <Row>
                                     <Col>Items: </Col>
-                                    <Col>${ cart.itemsPrice}</Col>
+                                    <Col>RM{ cart.itemsPrice}</Col>
                                 </Row>
                             </ListGroupItem>
 
                             <ListGroupItem>
                                 <Row>
                                     <Col>Shipping: </Col>
-                                    <Col>${ cart.shippingPrice}</Col>
+                                    <Col>RM{ cart.shippingPrice}</Col>
                                 </Row>
                             </ListGroupItem>
 
                             <ListGroupItem>
                                 <Row>
                                     <Col>Tax: </Col>
-                                    <Col>${ cart.taxPrice}</Col>
+                                    <Col>RM{ cart.taxPrice}</Col>
                                 </Row>
                             </ListGroupItem>
 
                             <ListGroupItem>
                                 <Row>
                                     <Col>Total: </Col>
-                                    <Col>${ cart.totalPrice}</Col>
+                                    <Col>RM{ cart.totalPrice}</Col>
                                 </Row>
                             </ListGroupItem>
 

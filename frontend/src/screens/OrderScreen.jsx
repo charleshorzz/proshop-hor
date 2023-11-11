@@ -152,7 +152,7 @@ const OrderScreen = () => {
                                         </Link>
                                     </Col>
                                     <Col md={4}>
-                                        {item.qty} x {item.price} = ${ item.qty * item.price}
+                                        {item.qty} x {item.price} = RM{ item.qty * item.price}
                                     </Col>
                                 </Row>
                             </ListGroupItem>
@@ -171,22 +171,22 @@ const OrderScreen = () => {
                         <ListGroupItem>
                             <Row>
                                 <Col>Items</Col>
-                                <Col>${order.itemsPrice}</Col>
+                                <Col>RM{order.itemsPrice}</Col>
                             </Row>
 
                             <Row>
                                 <Col>Shipping</Col>
-                                <Col>${order.shippingPrice}</Col>
+                                <Col>RM{order.shippingPrice}</Col>
                             </Row>
 
                             <Row>
                                 <Col>Tax</Col>
-                                <Col>${order.taxPrice}</Col>
+                                <Col>RM{order.taxPrice}</Col>
                             </Row>
 
                             <Row>
                                 <Col>Total</Col>
-                                <Col>${order.totalPrice}</Col>
+                                <Col>RM{order.totalPrice}</Col>
                             </Row>
                         </ListGroupItem>
                         {/* PAY ORDER PLACEHOLDER */}
